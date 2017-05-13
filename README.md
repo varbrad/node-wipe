@@ -1,6 +1,11 @@
 # node-wipe
 Node script to remove `node_modules` folder of inactive projects.
 
+# Install
+```shell
+npm install node-wipe -g
+```
+
 # Usage
 ## Patterns
 ````shell
@@ -12,7 +17,7 @@ node-wipe [path] [days]
 ## Examples
 `node-wipe`
 
-Will wipe all subdirectories within the current working directory their `node_modules` if the project was last modified longer ago than 30 days.
+Will wipe all subdirectories within the current working directory of their `node_modules` if the project was last modified longer ago than 30 days.
 
 `node-wipe ./dev/`
 
