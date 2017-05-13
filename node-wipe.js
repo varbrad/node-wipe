@@ -9,22 +9,22 @@ const yargs = require('yargs').alias('f', 'force').argv
 
 const version = require('./package.json').version
 
-function halt(message) {
+function halt (message) {
   console.error(chalk.bgRed('  ERROR ') + ' ' + message.replace('\n', '\n         • '))
   process.exit()
 }
 
-function warn(message) {
+function warn (message) {
   if (yargs.force) return
   console.warn(chalk.bgMagenta('   WARN ') + ' ' + message.replace('\n', '\n         • '))
 }
 
-function finish(message) {
+function finish (message) {
   console.log(chalk.bgGreen.black(' FINISH ') + ' ' + message.replace('\n', '\n         • '))
   process.exit()
 }
 
-function info(message) {
+function info (message) {
   console.log('         ' + message.replace('\n', '\n         • '))
 }
 
@@ -109,7 +109,7 @@ if (!yargs.force) {
   answerQ('y')
 }
 
-function answerQ(answer) {
+function answerQ (answer) {
   answer = answer.toLowerCase()
   if (answer !== 'y' && answer !== 'yes') finish('No inactive projects were wiped\nWiping was halted by user.')
 
